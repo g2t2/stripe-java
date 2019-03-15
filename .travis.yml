@@ -23,13 +23,13 @@ before_install:
       tar -zxf "stripe-mock/stripe-mock_${STRIPE_MOCK_VERSION}_linux_amd64.tar.gz" -C "stripe-mock/stripe-mock_${STRIPE_MOCK_VERSION}/"
     fi
   - |
-    stripe-mock/stripe-mock_${STRIPE_MOCK_VERSION}/stripe-mock > /dev/null &
+    stripe-mock/stripe-mock_${STRIPE_MOCK_VERSION}/stripe-mock -strict-version-check > /dev/null &
     STRIPE_MOCK_PID=$!
   - export PATH="${PATH}:${PWD}/stripe-mock/stripe-mock_${STRIPE_MOCK_VERSION}"
 
 env:
   global:
-  - STRIPE_MOCK_VERSION=0.47.0
+  - STRIPE_MOCK_VERSION=0.48.0
 
 matrix:
   include:
