@@ -108,6 +108,7 @@ public class ScheduledQueryRun extends ApiResource implements HasId {
   @Getter
   @Setter
   @EqualsAndHashCode(callSuper = false)
+  @SuppressWarnings("JavaLangClash")
   public static class Error extends StripeObject {
     /** Information about the run failure. */
     @SerializedName("message")
